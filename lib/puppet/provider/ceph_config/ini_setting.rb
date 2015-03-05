@@ -17,7 +17,9 @@
 
 Puppet::Type.type(:ceph_config).provide(
   :ini_setting,
-  :parent => Puppet::Type.type(:ini_setting).provider(:ruby)
+# there is no ini_settings type to inherit from; this is bizare ... 
+# trying to inherit from self ?? 
+#  :parent => Puppet::Type.type(:ini_setting).provider(:ruby)
 ) do
 
   def section
